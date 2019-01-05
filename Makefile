@@ -9,7 +9,7 @@ develop:
 		run-client
 
 test:
-		clj -A:test
+		clojure -A:test
 
 lint:
 		./linter.sh

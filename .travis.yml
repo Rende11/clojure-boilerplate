@@ -1,7 +1,10 @@
 language: clojure
 
+clojure:
+  - 1.10.0-RC4
+
 install:
-  - clojure
+  - echo "Clojure"
 
 script:
   - make lint

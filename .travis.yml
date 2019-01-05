@@ -1,0 +1,5 @@
+language: clojure
+
+script:
+  - make lint
+  - make test

@@ -1,5 +1,8 @@
 language: clojure
 
+install:
+  - make run-server
+
 script:
   - make lint
   - make test

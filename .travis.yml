@@ -11,7 +11,7 @@ install:
   - wget https://github.com/candid82/joker/releases/download/v0.11.0/joker-0.11.0-linux-amd64.zip
   - unzip joker-0.11.0-linux-amd64.zip
   - sudo mv joker /usr/bin/
-  - find ./src -type f -exec joker --lint {} \;
+  - find ./test -type f -exec joker --lint {} \; 2>&1 | wc -l
 
 
 

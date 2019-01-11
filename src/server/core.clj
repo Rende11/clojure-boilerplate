@@ -1,19 +1,21 @@
 (ns server.core
   (:require [org.httpkit.server :as http]
+            [server.layout :as layout]
             [bidi.ring :as bidi]
-            [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
-            [ring.util.response :as res]))
+            [ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
 
 
 (defn index-handler [request]
-  (-> (res/file-response "./resources/public/index.html")
-      (res/header "Content-Type" "text/html; charset=utf-8")))
+  (layout/render "public/index.html" {:text "Simple text from template variable"}))
+
+(defn home-handler [request]
+  (layout/render "public/pages/home.html" {}))
 
 (defn about-handler [request]
-  (-> (res/file-response "./resources/public/pages/about.html")
-      (res/header "Content-Type" "text/html; charset=utf-8")))
+  (layout/render "public/pages/about.html" {}))
 
 (def routes ["/" [["" index-handler]
+                  ["home" home-handler]
                   ["about" about-handler]
                   ["" (bidi/resources {:prefix "public/"})]]])
 (def app

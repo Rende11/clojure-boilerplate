@@ -1,16 +1,18 @@
-{:deps {org.clojure/clojure       {:mvn/version "1.10.0-RC4"}
-        org.clojure/clojurescript {:mvn/version "1.10.439"}
-        mvxcvi/puget              {:mvn/version "1.1.0"}
-        reagent                   {:mvn/version "0.7.0"}
-        re-frame                  {:mvn/version "0.10.6"}
-        cljs-http                 {:mvn/version "0.1.45"}
-        hiccup                    {:mvn/version "1.0.5"}
-        garden                    {:mvn/version "1.3.5"}
-	      http-kit                  {:mvn/version "2.4.0-alpha2"}
-        bidi                      {:mvn/version "2.1.5"}
- 	      ring                      {:mvn/version "1.5.1"}
-        ring/ring-defaults        {:mvn/version "0.3.2"}
-        healthsamurai/matcho      {:mvn/version "0.3.2"}
+{:deps {org.clojure/clojure        {:mvn/version "1.10.0-RC4"}
+        org.clojure/clojurescript  {:mvn/version "1.10.439"}
+        mvxcvi/puget               {:mvn/version "1.1.0"}
+        reagent                    {:mvn/version "0.7.0"}
+        re-frame                   {:mvn/version "0.10.6"}
+        cljs-http                  {:mvn/version "0.1.45"}
+        hiccup                     {:mvn/version "1.0.5"}
+        garden                     {:mvn/version "1.3.5"}
+	      http-kit                   {:mvn/version "2.4.0-alpha2"}
+        bidi                       {:mvn/version "2.1.5"}
+ 	      ring                       {:mvn/version "1.5.1"}
+        ring/ring-defaults         {:mvn/version "0.3.2"}
+        healthsamurai/matcho       {:mvn/version "0.3.2"}
+        selmer                     {:mvn/version "1.12.5"}
+        metosin/ring-http-response {:mvn/version "0.9.1"}
         }
 
  :paths ["src" "resources"]

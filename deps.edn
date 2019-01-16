@@ -12,8 +12,7 @@
         ring/ring-defaults         {:mvn/version "0.3.2"}
         healthsamurai/matcho       {:mvn/version "0.3.2"}
         selmer                     {:mvn/version "1.12.5"}
-        metosin/ring-http-response {:mvn/version "0.9.1"}
-        }
+        metosin/ring-http-response {:mvn/version "0.9.1"}}
 
  :paths ["src" "resources"]
 
@@ -24,20 +23,19 @@
                    :main-opts  ["-e" "(require,'cider-nrepl.main)(require,'spyscope.core)(cider-nrepl.main/init,[\"refactor-nrepl.middleware/wrap-refactor\",\"cider.nrepl/cider-middleware\"])"
                                 "-m" "server.core"]}
 
-           :dev {:extra-paths ["dev" "test"]
-                 :extra-deps  {nrepl              {:mvn/version "0.5.3"}
-                               cider/cider-nrepl  {:mvn/version "0.19.0-SNAPSHOT"}
-                               re-frisk           {:mvn/version "0.5.4"}
-                               binaryage/devtools {:mvn/version "0.9.10"}
-                               cider/piggieback   {:mvn/version "0.3.10"}
-                               figwheel-sidecar   {:mvn/version "0.5.17"
-                                                   :exclusions  [cider/cider-nrepl
-                                                                 org.clojure/tools.nrepl
-                                                                 cider/piggieback
-                                                                 nrepl/nrepl
-                                                                 com.google.javascript/closure-compiler]}}
-                 :main-opts   ["-m" "client.user"]}
-
+           :dev  {:extra-paths ["dev"]
+                  :extra-deps  {nrepl              {:mvn/version "0.5.3"}
+                                cider/cider-nrepl  {:mvn/version "0.19.0-SNAPSHOT"}
+                                re-frisk           {:mvn/version "0.5.4"}
+                                binaryage/devtools {:mvn/version "0.9.10"}
+                                cider/piggieback   {:mvn/version "0.3.10"}
+                                figwheel-sidecar   {:mvn/version "0.5.17"
+                                                    :exclusions  [cider/cider-nrepl
+                                                                  org.clojure/tools.nrepl
+                                                                  cider/piggieback
+                                                                  nrepl/nrepl
+                                                                  com.google.javascript/closure-compiler]}}
+                  :main-opts   ["-m" "user"]}
            :test {:extra-paths ["test"]
                   :extra-deps  {com.cognitect/test-runner {:git/url "https://github.com/cognitect-labs/test-runner.git"
                                                            :sha     "028a6d41ac9ac5d5c405dfc38e4da6b4cc1255d5"}}

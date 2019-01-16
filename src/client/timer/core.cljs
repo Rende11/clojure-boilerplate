@@ -13,8 +13,6 @@
         {:on-click #(swap! state dec)}
         (str text2 " " @state)]])))
 
-(defn component []
-  (let [state (reagent/atom {:state "ololo"})]))
 
 (defn basic []
   [:div

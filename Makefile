@@ -4,10 +4,6 @@ run-server:
 run-client:
 		clj -A:dev -r
 
-develop:
-		run-server &
-		run-client
-
 test:
 		clojure -A:test
 

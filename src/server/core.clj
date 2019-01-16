@@ -2,6 +2,7 @@
   (:require [org.httpkit.server :as http]
             [server.handlers :as handlers]
             [bidi.ring :as bidi]
+            [config.core :as config]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
 
 (def app
@@ -9,6 +10,7 @@
       bidi/make-handler
       (wrap-defaults site-defaults)))
 
+(defonce config (config/load-env))
 (defonce server (atom nil))
 
 (defn stop-server []
@@ -17,7 +19,7 @@
     (reset! server nil)))
 
 (defn start-server []
-  (reset! server (http/run-server app {:port 8081})))
+  (reset! server (http/run-server app {:port (:port config)})))
 
 (defn -main []
   (start-server))
@@ -29,8 +31,6 @@
                    (start-server))))
 
 (comment
-  (router/match-route routes "/index")
-  (router/match-route routes "/about")
-  (prn
-   "add env port var"))
+  (prn (:port (config/load-env)))
+  (prn "add env port var"))
 

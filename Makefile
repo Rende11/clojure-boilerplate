@@ -10,4 +10,10 @@ test:
 lint:
 		./linter.sh
 
+format:
+		clj -A:format
+
+format-fix:
+		clj -A:format/fix
+
 .PHONY: test

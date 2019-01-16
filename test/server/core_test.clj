@@ -13,18 +13,15 @@
 
 (deftest basic-response-test
 
-  (is (matcho/match 
+  (is (matcho/match
        @(client/get "http://localhost:8081/")
-       {:status 200
-        :body string?}))
+        {:status 200
+         :body string?}))
 
-  (is (matcho/match 
+  (is (matcho/match
        @(client/get "http://localhost:8081/about")
-       {:status 200
-        :body #(string/includes? % "It's about page!")})))
-
+        {:status 200
+         :body #(string/includes? % "It's about page!")})))
 
 (use-fixtures :once before-and-after-test)
-
-
 

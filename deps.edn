@@ -16,28 +16,45 @@
 
  :paths ["src" "resources"]
 
- :aliases {:nrepl {:extra-deps {spyscope                      {:mvn/version "0.1.6"}
-                                org.clojure/tools.nrepl       {:mvn/version "0.2.13"}
-                                cider/cider-nrepl             {:mvn/version "0.19.0-SNAPSHOT"}
-                                refactor-nrepl/refactor-nrepl {:mvn/version "2.4.0-SNAPSHOT"}}
-                   :main-opts  ["-e" "(require,'cider-nrepl.main)(require,'spyscope.core)(cider-nrepl.main/init,[\"refactor-nrepl.middleware/wrap-refactor\",\"cider.nrepl/cider-middleware\"])"
-                                "-m" "server.core"]}
+ :aliases {:nrepl
+           {:extra-deps {spyscope                      {:mvn/version "0.1.6"}
+                         org.clojure/tools.nrepl       {:mvn/version "0.2.13"}
+                         cider/cider-nrepl             {:mvn/version "0.19.0-SNAPSHOT"}
+                         refactor-nrepl/refactor-nrepl {:mvn/version "2.4.0-SNAPSHOT"}}
+            :main-opts  ["-e" "(require,'cider-nrepl.main)(require,'spyscope.core)(cider-nrepl.main/init,[\"refactor-nrepl.middleware/wrap-refactor\",\"cider.nrepl/cider-middleware\"])"
+                         "-m" "server.core"]}
 
-           :dev  {:extra-paths ["dev"]
-                  :extra-deps  {nrepl              {:mvn/version "0.5.3"}
-                                cider/cider-nrepl  {:mvn/version "0.19.0-SNAPSHOT"}
-                                re-frisk           {:mvn/version "0.5.4"}
-                                binaryage/devtools {:mvn/version "0.9.10"}
-                                cider/piggieback   {:mvn/version "0.3.10"}
-                                figwheel-sidecar   {:mvn/version "0.5.17"
-                                                    :exclusions  [cider/cider-nrepl
-                                                                  org.clojure/tools.nrepl
-                                                                  cider/piggieback
-                                                                  nrepl/nrepl
-                                                                  com.google.javascript/closure-compiler]}}
-                  :main-opts   ["-m" "user"]}
+           :dev
+           {:extra-paths ["dev"]
+            :main-opts   ["-m" "user"]
+            :extra-deps  {nrepl              {:mvn/version "0.5.3"}
+                          cider/cider-nrepl  {:mvn/version "0.19.0-SNAPSHOT"}
+                          re-frisk           {:mvn/version "0.5.4"}
+                          binaryage/devtools {:mvn/version "0.9.10"}
+                          cider/piggieback   {:mvn/version "0.3.10"}
+                          figwheel-sidecar   {:mvn/version "0.5.17"
+                                              :exclusions  [cider/cider-nrepl
+                                                            org.clojure/tools.nrepl
+                                                            cider/piggieback
+                                                            nrepl/nrepl
+                                                            com.google.javascript/closure-compiler]}}
+            }
 
-           :test {:extra-paths ["test"]
-                  :extra-deps  {com.cognitect/test-runner {:git/url "https://github.com/cognitect-labs/test-runner.git"
-                                                           :sha     "028a6d41ac9ac5d5c405dfc38e4da6b4cc1255d5"}}
-                  :main-opts   ["-m" "cognitect.test-runner"]}}}
+           :format
+           {:extra-deps {com.jameslaverack/cljfmt-runner
+                         {:git/url "https://github.com/JamesLaverack/cljfmt-runner"
+                          :sha     "51f85c9d6cc67107620749ceacd46120647fe107"}}
+            :main-opts  ["-m" "cljfmt-runner.check"]}
+
+           :format/fix
+           {:extra-deps {com.jameslaverack/cljfmt-runner
+                         {:git/url "https://github.com/JamesLaverack/cljfmt-runner"
+                          :sha     "51f85c9d6cc67107620749ceacd46120647fe107"}}
+            :main-opts  ["-m" "cljfmt-runner.fix"]}
+
+           :test
+           {:extra-paths ["test"]
+            :extra-deps  {com.cognitect/test-runner
+                          {:git/url "https://github.com/cognitect-labs/test-runner.git"
+                           :sha     "028a6d41ac9ac5d5c405dfc38e4da6b4cc1255d5"}}
+            :main-opts   ["-m" "cognitect.test-runner"]}}}

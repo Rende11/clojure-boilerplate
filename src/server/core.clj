@@ -4,7 +4,6 @@
             [bidi.ring :as bidi]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
 
-
 (defn index-handler [request]
   (layout/render "public/index.html" {:text "Simple text from template variable"}))
 
@@ -35,7 +34,6 @@
 
 (defn -main []
   (start-server))
-
 
 (comment
   (def stop (stop-server))

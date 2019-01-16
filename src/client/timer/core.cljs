@@ -1,7 +1,6 @@
 (ns client.timer.core
   (:require [reagent.core :as reagent]))
 
-
 (defn counting-button [txt]
   (let [state (reagent/atom 4)] ;; state is accessible in the render function
     (fn [text1 text2]
@@ -12,7 +11,6 @@
        [:button.green
         {:on-click #(swap! state dec)}
         (str text2 " " @state)]])))
-
 
 (defn basic []
   [:div

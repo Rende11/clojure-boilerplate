@@ -2,13 +2,11 @@
   (:require [cider-nrepl.main]
             [figwheel-sidecar.repl-api :as repl]))
 
-
 (defn -main [& args]
   (println "Starting nrepl...")
   (cider-nrepl.main/init
    ["cider.nrepl/cider-middleware"
     "cider.piggieback/wrap-cljs-repl"]))
-
 
 (def figwheel-options
   {:figwheel-options {:css-dirs ["resources/public/css"]
@@ -27,7 +25,6 @@
 (defn start []
   (repl/start-figwheel! figwheel-options)
   (repl/cljs-repl))
-
 
 (comment
   (start))

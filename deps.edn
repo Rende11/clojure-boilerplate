@@ -6,9 +6,9 @@
         cljs-http                  {:mvn/version "0.1.45"}
         hiccup                     {:mvn/version "1.0.5"}
         garden                     {:mvn/version "1.3.5"}
-	      http-kit                   {:mvn/version "2.4.0-alpha2"}
+        http-kit                   {:mvn/version "2.4.0-alpha2"}
         bidi                       {:mvn/version "2.1.5"}
- 	      ring                       {:mvn/version "1.5.1"}
+        ring                       {:mvn/version "1.5.1"}
         ring/ring-defaults         {:mvn/version "0.3.2"}
         healthsamurai/matcho       {:mvn/version "0.3.2"}
         selmer                     {:mvn/version "1.12.5"}
@@ -36,6 +36,7 @@
                                                                   nrepl/nrepl
                                                                   com.google.javascript/closure-compiler]}}
                   :main-opts   ["-m" "user"]}
+
            :test {:extra-paths ["test"]
                   :extra-deps  {com.cognitect/test-runner {:git/url "https://github.com/cognitect-labs/test-runner.git"
                                                            :sha     "028a6d41ac9ac5d5c405dfc38e4da6b4cc1255d5"}}

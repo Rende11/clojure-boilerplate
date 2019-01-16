@@ -4,15 +4,14 @@
             [cumulo-util.build :as cumilo]))
 
 (defn readme-component []
-  (let [state (reagent/atom {})]
-    (fn []
-      [:div {:style {:margin "30px auto"}
-             :dangerouslySetInnerHTML
-             {:__html (->
-                       (cumilo/inline-resource "README.md")
-                       (md/md->html
-                        :code-style
-                        #(str "class=\"text-secondary" % "\"")))}}])))
+  (fn []
+    [:div {:style {:margin "30px auto"}
+           :dangerouslySetInnerHTML
+           {:__html (->
+                     (cumilo/inline-resource "README.md")
+                     (md/md->html
+                      :code-style
+                      #(str "class=\"text-secondary" % "\"")))}}]))
 
 (defn basic []
   [:div

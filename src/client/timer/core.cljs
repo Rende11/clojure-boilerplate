@@ -1,21 +1,22 @@
 (ns client.timer.core
-  (:require [reagent.core :as reagent]))
+  (:require [reagent.core :as reagent]
+            [markdown.core :as md]
+            [cumulo-util.build :as cumilo]))
 
-(defn counting-button [txt]
-  (let [state (reagent/atom 4)] ;; state is accessible in the render function
-    (fn [text1 text2]
-      [:div
-       [:button.green
-        {:on-click #(swap! state inc)}
-        (str text1 " " @state)]
-       [:button.green
-        {:on-click #(swap! state dec)}
-        (str text2 " " @state)]])))
+(defn readme-component []
+  (let [state (reagent/atom {})]
+    (fn []
+      [:div {:style {:margin "30px auto"}
+             :dangerouslySetInnerHTML
+             {:__html (->
+                       (cumilo/inline-resource "README.md")
+                       (md/md->html
+                        :code-style
+                        #(str "class=\"text-secondary" % "\"")))}}])))
 
 (defn basic []
   [:div
-   [counting-button "plus" "minus"]
-   [:p "Mounted"]])
+   [readme-component]])
 
 (defn ^:export main []
   (reagent/render [basic]

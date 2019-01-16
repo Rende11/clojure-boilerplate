@@ -13,18 +13,20 @@
         healthsamurai/matcho       {:mvn/version "0.3.2"}
         selmer                     {:mvn/version "1.12.5"}
         yogthos/config             {:mvn/version "1.1.1"}
+        cumulo/util                {:mvn/version "0.1.6"}
+        markdown-clj               {:mvn/version "1.0.6"}
         metosin/ring-http-response {:mvn/version "0.9.1"}}
 
  :paths ["src" "resources"]
 
  :aliases {:nrepl
            {:extra-paths ["config/dev"]
-            :extra-deps {spyscope                      {:mvn/version "0.1.6"}
-                         org.clojure/tools.nrepl       {:mvn/version "0.2.13"}
-                         cider/cider-nrepl             {:mvn/version "0.19.0-SNAPSHOT"}
-                         refactor-nrepl/refactor-nrepl {:mvn/version "2.4.0-SNAPSHOT"}}
-            :main-opts  ["-e" "(require,'cider-nrepl.main)(require,'spyscope.core)(cider-nrepl.main/init,[\"refactor-nrepl.middleware/wrap-refactor\",\"cider.nrepl/cider-middleware\"])"
-                         "-m" "server.core"]}
+            :extra-deps  {spyscope                      {:mvn/version "0.1.6"}
+                          org.clojure/tools.nrepl       {:mvn/version "0.2.13"}
+                          cider/cider-nrepl             {:mvn/version "0.19.0-SNAPSHOT"}
+                          refactor-nrepl/refactor-nrepl {:mvn/version "2.4.0-SNAPSHOT"}}
+            :main-opts   ["-e" "(require,'cider-nrepl.main)(require,'spyscope.core)(cider-nrepl.main/init,[\"refactor-nrepl.middleware/wrap-refactor\",\"cider.nrepl/cider-middleware\"])"
+                          "-m" "server.core"]}
 
            :dev
            {:extra-paths ["dev" "config/dev"]

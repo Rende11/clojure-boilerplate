@@ -1,9 +1,11 @@
 
-# Clojure/ClojureScript application template server and client
+## Clojure/ClojureScript application template server and client
+*****
 
 [![CircleCI](https://circleci.com/gh/Rende11/clojure-boilerplate.svg?style=svg)](https://circleci.com/gh/Rende11/clojure-boilerplate)
-
 [![Build Status](https://travis-ci.org/Rende11/clojure-boilerplate.svg?branch=master)](https://travis-ci.org/Rende11/clojure-boilerplate)
+
+<br/>
 
 ### Basic concepts:
 
@@ -12,25 +14,25 @@
 * Linter - we use Joker
 * Code formatter - runner base on cljfmt
 * Clojure CLI/deps.edn - dependencies manager
+* Clojure CLI/deps.edn - dependencies manager
 
 
 ### How to run:
-1. Run server side 
-```Make run-server```
+1. Run server side <code>make run-servers</code>
 
-2. Run client side 
-```Make run-client```
-Application available on localhost:8081
+2. Run client side <code>make run-client</code>
 
-3. Open dev/user.clj and connect to client repl
-4. Eval buffer and run ```(start)``` - figwheel should start and build base js
+_Now application available on localhost:8081_
+
+3. Open <code>dev/user.clj</code> and connect to client repl
+4. Eval buffer and run <code>(start)</code> - figwheel should start and build base js
 5. All started, connect to repl's and coding
 
 ### Other useful commands:
-* ```make lint``` - check your code with linter
-* ```make test``` - run tests
-* ```make format``` - check your code style
-* ```make format-fix``` - fix code style issues
+* <code>make lint</code> - check your code with linter
+* <code>make test</code> - run tests
+* <code>make format</code> - check your code style
+* <code>make format-fix</code> - fix code style issues
 
 
 

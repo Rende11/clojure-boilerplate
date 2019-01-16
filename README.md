@@ -10,6 +10,7 @@
 * Clj/Cljs REPLS - eval your code in editor and obtain result
 * Figwheel - hot reload client code
 * Linter - we use Joker
+* Code formatter - runner base on cljfmt
 * Clojure CLI/deps.edn - dependencies manager
 
 
@@ -28,6 +29,8 @@ Application available on localhost:8081
 ### Other useful commands:
 * ```make lint``` - check your code with linter
 * ```make test``` - run tests
+* ```make format``` - check your code style
+* ```make format-fix``` - fix code style issues
 
 
 

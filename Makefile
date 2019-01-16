@@ -11,7 +11,7 @@ lint:
 		./linter.sh
 
 format:
-		clj -A:format
+		clojure -A:format
 
 format-fix:
 		clj -A:format/fix

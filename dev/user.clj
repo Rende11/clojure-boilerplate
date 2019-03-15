@@ -12,11 +12,11 @@
 
 (def figwheel-options
   {:figwheel-options {:css-dirs ["resources/public/css"]
-                      :builds-to-start ["development"]}
-   :all-builds  [{:id "development"
-                  :source-paths ["src/client/timer"]
+                      :builds-to-start ["main"]}
+   :all-builds  [{:id "main"
+                  :source-paths ["src/client/main"]
                   :compiler
-                  {:main "client.timer.dev"
+                  {:main "client.main.dev"
                    :asset-path "/js/out"
                    :output-to "resources/public/js/app.js"
                    :output-dir "resources/public/js/out"

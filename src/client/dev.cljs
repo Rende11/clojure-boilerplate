@@ -1,5 +1,5 @@
-(ns ^:figwheel-no-load client.timer.dev
-  (:require [client.timer.core :as core]
+(ns ^:figwheel-no-load client.dev
+  (:require [client.main.core :as core]
             [figwheel.client :as figwheel :include-macros true]
             [re-frisk.core :refer [enable-re-frisk!]]
             [devtools.core :as devtools]))

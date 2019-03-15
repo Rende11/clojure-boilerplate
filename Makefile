@@ -1,7 +1,7 @@
-run-server:
+server:
 		clj -A:nrepl
 
-run-client:
+client:
 		clj -A:dev -r
 
 test:

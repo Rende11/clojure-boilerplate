@@ -1,6 +1,5 @@
 {:deps {org.clojure/clojure        {:mvn/version "1.10.0-RC4"}
         org.clojure/clojurescript  {:mvn/version "1.10.439"}
-        mvxcvi/puget               {:mvn/version "1.1.0"}
         reagent                    {:mvn/version "0.7.0"}
         re-frame                   {:mvn/version "0.10.6"}
         cljs-http                  {:mvn/version "0.1.45"}
@@ -13,8 +12,6 @@
         healthsamurai/matcho       {:mvn/version "0.3.2"}
         selmer                     {:mvn/version "1.12.5"}
         yogthos/config             {:mvn/version "1.1.1"}
-        cumulo/util                {:mvn/version "0.1.6"}
-        markdown-clj               {:mvn/version "1.0.6"}
         metosin/ring-http-response {:mvn/version "0.9.1"}}
 
  :paths ["src" "resources"]
@@ -41,8 +38,7 @@
                                                             org.clojure/tools.nrepl
                                                             cider/piggieback
                                                             nrepl/nrepl
-                                                            com.google.javascript/closure-compiler]}}
-            }
+                                                            com.google.javascript/closure-compiler]}}}
 
            :format
            {:extra-deps {com.jameslaverack/cljfmt-runner

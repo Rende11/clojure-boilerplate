@@ -14,7 +14,7 @@
    :all-builds  [{:id "development"
                   :source-paths ["src/client/timer"]
                   :compiler
-                  {:main "client.timer.dev"
+                  {:main "client.main.dev"
                    :asset-path "/js/out"
                    :output-to "resources/public/js/app.js"
                    :output-dir "resources/public/js/out"

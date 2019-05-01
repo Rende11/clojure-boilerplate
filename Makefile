@@ -16,4 +16,10 @@ format:
 format-fix:
 		clj -A:format/fix
 
+build:
+		clojure -A:depstar:webassets -m hf.depstar.uberjar app.jar
+
+run:
+		java -cp app.jar clojure.main -m app.core
+
 .PHONY: test

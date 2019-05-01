@@ -2,7 +2,7 @@
   (:require  [clojure.test :refer :all]
              [clojure.string :as string]
              [matcho.core :as matcho]
-             [server.core :as server]
+             [app.core :as server]
              [org.httpkit.client :as client]))
 
 (defn before-and-after-test [test-fn]

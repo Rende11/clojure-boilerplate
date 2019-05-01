@@ -1,5 +1,5 @@
-(ns server.handlers
-  (:require [server.layout :as layout]
+(ns app.handlers
+  (:require [app.layout :as layout]
             [bidi.ring :as bidi]))
 
 (defn index-handler [request]

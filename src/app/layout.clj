@@ -1,4 +1,4 @@
-(ns server.layout
+(ns app.layout
   (:require
    [selmer.parser :as parser]
    [ring.util.http-response :refer [content-type ok]]))

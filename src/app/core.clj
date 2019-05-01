@@ -1,6 +1,6 @@
-(ns server.core
+(ns app.core
   (:require [org.httpkit.server :as http]
-            [server.handlers :as handlers]
+            [app.handlers :as handlers]
             [bidi.ring :as bidi]
             [config.core :as config]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
@@ -19,7 +19,7 @@
     (reset! server nil)))
 
 (defn start-server []
-  (reset! server (http/run-server app {:port (:port config)})))
+  (reset! server (http/run-server app {:port (or (:port config) 8081)})))
 
 (defn -main []
   (start-server))
@@ -32,5 +32,10 @@
 
 (comment
   (prn (:port (config/load-env)))
-  (prn "add env port var"))
+  (prn
+
+
+
+   "add env port var"))
+
 

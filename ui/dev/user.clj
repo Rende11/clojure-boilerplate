@@ -10,19 +10,33 @@
     "cider.piggieback/wrap-cljs-repl"]))
 
 
-(def figwheel-options
+#_(def figwheel-options
   {:figwheel-options {:css-dirs        ["resources/public/css"]
                       :builds-to-start ["dev"]}
    :all-builds       [{:id           "dev"
                        :source-paths ["ui/src/ui"]
                        :compiler
-                       {:main            "ui.dev"
-                        :asset-path      "/js/out"
-                        :output-to       "resources/public/js/app.js"
-                        :output-dir      "resources/public/js/out"
-                        :source-map      true
-                        :optimizations   :advanced
-                        :pretty-print    true}}]})
+                       {:main          "ui.dev"
+                        :asset-path    "/js/out"
+                        :output-to     "resources/public/js/app.js"
+                        :output-dir    "resources/public/js/out"
+                        :source-map    true
+                        :optimizations :none
+                        :pretty-print  true}}]})
+
+(def figwheel-options
+  {:figwheel-options {:css-dirs ["resources/public/css"]
+                      :builds-to-start ["dev"]}
+   :all-builds  [{:id "dev"
+                  :source-paths ["ui/src/ui"]
+                  :compiler
+                  {:main "ui.dev"
+                   :asset-path "/js/out"
+                   :output-to "resources/public/js/app.js"
+                   :output-dir "resources/public/js/out"
+                   :source-map true
+                   :optimizations :none
+                   :pretty-print  true}}]})
 
 (defn start []
   (repl/start-figwheel! figwheel-options)

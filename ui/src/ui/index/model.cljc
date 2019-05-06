@@ -16,7 +16,8 @@
 (rf/reg-event-db
  :tasks/save
  (fn [db [_ id value]]
-   (update-in db [:index-data id] assoc :edited? false :text value)))
+   db
+   #_(update-in db [:index-data id] assoc :edited? false :text value)))
 
 (rf/reg-event-db
  :tasks/cancel
@@ -68,10 +69,11 @@
 (rf/reg-event-fx
  :tasks/initialize
  (fn [{db :db} _]
-   {:db (assoc db :index-data {1 {:id 1 :text "One" :status "open" :edited? true}
-                               2 {:id 2 :text "Two" :status "open" :edited? false}
-                               3 {:id 3 :text "Three" :status "done" :edited? false}
-                               4 {:id 4 :text "Four" :status "open" :edited? false}})}))
+   {:db (assoc db :index-data {}
+               #_{1 {:id 1 :text "One" :status "open" :edited? true}
+                  2 {:id 2 :text "Two" :status "open" :edited? false}
+                  3 {:id 3 :text "Three" :status "done" :edited? false}
+                  4 {:id 4 :text "Four" :status "open" :edited? false}})}))
 
 (->> (group-by :id [{:id 1 :text "One" :status "open" :edited? true}
                    {:id 2 :text "Two" :status "open" :edited? false}

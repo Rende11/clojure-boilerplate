@@ -1,13 +1,13 @@
 (ns ui.core
   (:require [reagent.core :as reagent]
             [re-frame.core :as rf]
-            [ui.index.core :as index]
-            [ui.index.model]
-            ))
+            [ui.dev]
+            [ui.model :as model]
+            [ui.view :as view]))
 
 (defn mount-root []
-  (rf/dispatch-sync [:tasks/initialize])
-  (reagent/render [index/page] (.getElementById js/document "app")))
+  (rf/dispatch-sync [::model/initialize])
+  (reagent/render [view/page] (.getElementById js/document "app")))
 
 (defn init! []
   (mount-root))

@@ -34,14 +34,13 @@
                    :asset-path "/js/out"
                    :output-to "resources/public/js/app.js"
                    :output-dir "resources/public/js/out"
-                   :source-map true
-                   :optimizations :none
+                   :source-map "resources/public/js/map.js.map"
+                   :optimizations :advanced
                    :pretty-print  true}}]})
 
 (defn start []
   (repl/start-figwheel! figwheel-options)
   (repl/cljs-repl))
-
 (comment
   (start))
 
